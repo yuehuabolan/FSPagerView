@@ -239,6 +239,9 @@ open class FSPagerViewTransformer: NSObject {
         guard let pagerView = self.pagerView else {
             return 0
         }
+        if pagerView.interitemSpacing != 0 {
+            return pagerView.interitemSpacing
+        }
         let scrollDirection = pagerView.scrollDirection
         switch self.type {
         case .overlap:
